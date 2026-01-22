@@ -27,17 +27,10 @@ const getComputerChoice = () => {
     }
 }
 
-const getWinner = (playerChoice, computerChoice) => {
-    if (playerChoice === computerChoice) {
-        return 'TIE';
-    } else if (playerChoice === ROCK && computerChoice === SCISSORS ||
-        playerChoice === PAPER && computerChoice === ROCK ||
-        playerChoice === SCISSORS && computerChoice === PAPER) {
-        return 'PLAYER';
-    } else {
-        return 'COMPUTER';
-    }
-}
+const getWinner = (playerChoice, computerChoice) => playerChoice === computerChoice ? 'TIE' : playerChoice === ROCK && computerChoice === SCISSORS ||
+    playerChoice === PAPER && computerChoice === ROCK ||
+    playerChoice === SCISSORS && computerChoice === PAPER ? 'PLAYER' : 'COMPUTER';
+
 
 const startGame = () => {
     if (isGameRunning) {
