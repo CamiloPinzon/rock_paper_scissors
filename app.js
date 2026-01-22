@@ -38,7 +38,7 @@ const startGame = () => {
         return;
     }
     isGameRunning = true;
-    const playerChoice = getPlayerChoice();
+    const playerChoice = getPlayerChoice() || DEFAULT_CHOICE;
     const computerChoice = getComputerChoice();
     const winner = getWinner(playerChoice, computerChoice);
     winner === 'TIE' ? alert('It\'s a tie!') :
