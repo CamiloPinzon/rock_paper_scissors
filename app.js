@@ -11,7 +11,7 @@ const getPlayerChoice = () => {
     const playerChoice = prompt(`Choose: ${ROCK}, ${PAPER}, or ${SCISSORS}:`, '').toUpperCase();
     if (playerChoice !== ROCK && playerChoice !== PAPER && playerChoice !== SCISSORS) {
         alert(`Invalid choice: ${playerChoice}. We select ${DEFAULT_CHOICE} for you.`);
-        return DEFAULT_CHOICE;
+        return;
     }
     return playerChoice;
 }
@@ -27,7 +27,7 @@ const getComputerChoice = () => {
     }
 }
 
-const getWinner = (playerChoice, computerChoice) => playerChoice === computerChoice ? 'TIE' : playerChoice === ROCK && computerChoice === SCISSORS ||
+const getWinner = (playerChoice = DEFAULT_CHOICE, computerChoice) => playerChoice === computerChoice ? 'TIE' : playerChoice === ROCK && computerChoice === SCISSORS ||
     playerChoice === PAPER && computerChoice === ROCK ||
     playerChoice === SCISSORS && computerChoice === PAPER ? 'PLAYER' : 'COMPUTER';
 
